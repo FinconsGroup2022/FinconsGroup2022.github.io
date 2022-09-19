@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+   <body>
+      
+      <div class="headerContainer">
+         <div style="background-color:#040496;margin: 1rem;padding: 0.5rem;width:10%" id="heroku">
+            <div style="float:left;width: 24%;">
+				<img style="padding-right: 1rem;" height="100%" width="65px" src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-original-577x577/s3/032021/axa_logo_open_blue_rgb.png?rvw7noouY8YQY56NEl7.g9AbiGNRcXAM&itok=xihk68zw"/>
+            </div>
+         </div>
+         <div class="slds-align_absolute-center" style="margin-left: 25%;">
+            <span class="header">
+            Sito Web AXA
+            </span>
+         </div>
+      </div>
+	  
+      <div id="spinner" style="display:none" class="spinner-border slds-align_absolute-center"></div>
+	  
+	  <!-- Dashboard Embed Container -->
+      <div id="dashboard"></div>
+	  
+   </body>
+   <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <style>
+         .headerContainer{
+			 width: 100%;
+			 top: 0;
+			 left: 0;
+			 z-index: 100;
+			 position: relative;
+			 display: flex;
+			 background: #040496;
+			 color: #fff;
+         }
+         .header{
+			 padding:1rem;
+			 font-family: 'Salesforce Sans',Arial,sans-serif;
+			 line-height: 1.5;
+			 display: flex;
+			 align-content: center;
+			 align-items: stretch;
+			 white-space: nowrap;
+			 position: relative;
+			 font-size: 35px;
+			 transition: background-color .25s cubic-bezier(0.39, 0.575, 0.565, 1);
+         }
+         .slds-align_absolute-center {
+			 display: flex;
+			 justify-content: center;
+			 align-content: center;
+			 align-items: center;
+			 margin: auto;
+         }
+      </style>
+	  
+      <script src="https://axaitalia--full.lightning.force.com/lightning/lightning.out.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script>
+         var token;
+		 var clientID='3MVG9lcxCTdG2VbuUvlhgu0dJbvAGbJ0Z.PFdL0uCs4FRbLaytorCHCzNC5YElNnpIrRRrLcshPwv5TRQYdkz';
+		 var clientSecret = '96219F072C04F44FFEFE5CFB1D08C4DE0C576C32E005B72E441922979C3C3D53';
+         
+         var OAuthURL='https://axaitalia--full.my.salesforce.com/services/oauth2/authorize?client_id='+clientID+'&client_secret='+clientSecret+'&response_type=token&redirect_uri=https://finconsgroup2022.github.io/index.html'
+         				  
+         $(document).ready(function(){
+         
+			 var decodedUrl= decodeURIComponent(window.location.href);
+			 var tokenLiteral='access_token=';
+			 
+			 if(decodedUrl.includes(tokenLiteral)){
+				var start = decodedUrl.indexOf(tokenLiteral) + tokenLiteral.length;
+				var stringEnd = decodedUrl.indexOf('&');
+				token = decodedUrl.substring(start,stringEnd);
+				console.log(token);
+			 }
+			 else
+				alert('Starting Authentication');
+			 
+			 if(token){
+				alert('Authentication Complete! :)');//('We got the token! :D *hopefully the right one!*');
+				initializeApp();
+			 }else
+				window.location = OAuthURL;
+         	
+         });
+         
+         function initializeApp(){
+			document.getElementById("spinner").style.display = "block";
+         
+			 var url='https://axaitalia--full.lightning.force.com';
+			 var appName='c:TESTWebpagePoCNFEapp';
+			 $Lightning.use(appName, 
+						function() {
+							document.getElementById("spinner").style.display = "none";
+							createComponent();
+						}, url, token);
+         
+         }
+         
+         function createComponent(){
+         	$Lightning.createComponent(
+         		"c:TESTWebpagePoCNFE", 
+         		{
+         			accessToken: token
+         		}, 
+         		"dashboard"
+         	); 
+         }
+      </script>
+   </head>
+</html>

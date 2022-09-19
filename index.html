@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
    <body>
       
@@ -18,7 +17,11 @@
       <div id="spinner" style="display:none" class="spinner-border slds-align_absolute-center"></div>
 	  
 	  <!-- Dashboard Embed Container -->
-      <div id="dashboard"></div>
+      <div id="dashboard">
+        <a href="https://finconsgroup2022.github.io/tableau.html">
+        <img src="https://axaitalia--full.livepreview.salesforce-communities.com/sfsites/c/file-asset/Untitled3?v=1" alt="HomePage Image" width="1020" height="393" href="">
+        </a>
+      </div>
 	  
    </body>
    <head>
@@ -53,61 +56,7 @@
 			 align-items: center;
 			 margin: auto;
          }
-      </style>
-	  
-      <script src="https://axaitalia--full.lightning.force.com/lightning/lightning.out.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script>
-         var token;
-		 var clientID='3MVG9lcxCTdG2VbuUvlhgu0dJbvAGbJ0Z.PFdL0uCs4FRbLaytorCHCzNC5YElNnpIrRRrLcshPwv5TRQYdkz';
-		 var clientSecret = '96219F072C04F44FFEFE5CFB1D08C4DE0C576C32E005B72E441922979C3C3D53';
-         
-         var OAuthURL='https://axaitalia--full.my.salesforce.com/services/oauth2/authorize?client_id='+clientID+'&client_secret='+clientSecret+'&response_type=token&redirect_uri=https://finconsgroup2022.github.io/index.html'
-         				  
-         $(document).ready(function(){
-         
-			 var decodedUrl= decodeURIComponent(window.location.href);
-			 var tokenLiteral='access_token=';
-			 
-			 if(decodedUrl.includes(tokenLiteral)){
-				var start = decodedUrl.indexOf(tokenLiteral) + tokenLiteral.length;
-				var stringEnd = decodedUrl.indexOf('&');
-				token = decodedUrl.substring(start,stringEnd);
-				console.log(token);
-			 }
-			 else
-				alert('Starting Authentication');
-			 
-			 if(token){
-				alert('Authentication Complete! :)');//('We got the token! :D *hopefully the right one!*');
-				initializeApp();
-			 }else
-				window.location = OAuthURL;
-         	
-         });
-         
-         function initializeApp(){
-			document.getElementById("spinner").style.display = "block";
-         
-			 var url='https://axaitalia--full.lightning.force.com';
-			 var appName='c:TESTWebpagePoCNFEapp';
-			 $Lightning.use(appName, 
-						function() {
-							document.getElementById("spinner").style.display = "none";
-							createComponent();
-						}, url, token);
-         
-         }
-         
-         function createComponent(){
-         	$Lightning.createComponent(
-         		"c:TESTWebpagePoCNFE", 
-         		{
-         			accessToken: token
-         		}, 
-         		"dashboard"
-         	); 
-         }
-      </script>
-   </head>
+        </style>
+    </head>
 </html>
+    
