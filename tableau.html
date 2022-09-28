@@ -62,7 +62,7 @@
 		 var clientID='3MVG9lcxCTdG2VbuUvlhgu0dJbvAGbJ0Z.PFdL0uCs4FRbLaytorCHCzNC5YElNnpIrRRrLcshPwv5TRQYdkz';
 		 var clientSecret = '96219F072C04F44FFEFE5CFB1D08C4DE0C576C32E005B72E441922979C3C3D53';
          
-         var OAuthURL='https://full-axaitalia.cs88.force.com/poctcrmnfe/authorize?client_id='+clientID+'&client_secret='+clientSecret+'&response_type=token&redirect_uri=https://finconsgroup2022.github.io/tableau.html'
+         var OAuthURL='https://full-axaitalia.cs88.force.com/services/oauth2/authorize?client_id='+clientID+'&client_secret='+clientSecret+'&response_type=token&redirect_uri=https://finconsgroup2022.github.io/tableau.html'
          				  
          $(document).ready(function(){
          
@@ -76,10 +76,10 @@
 				console.log(token);
 			 }
 			 else
-				alert('Starting Authentication');
+				alert('Inizio Autenticazione');
 			 
 			 if(token){
-				alert('Authentication Complete! :)');//('We got the token! :D *hopefully the right one!*');
+				alert('Autenticazione Completata');//('We got the token! :D *hopefully the right one!*');
 				initializeApp();
 			 }else
 				window.location = OAuthURL;
