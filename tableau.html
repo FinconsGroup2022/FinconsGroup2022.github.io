@@ -54,7 +54,7 @@
          }
       </style>
 	  
-      <script src="https://full-axaitalia.cs88.force.com/poctcrmnfe/lightning/lightning.out.js"></script>
+      <script src="https://axaitalia--full.lightning.force.com/lightning/lightning.out.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script>
          var token;
@@ -89,11 +89,10 @@
 			document.getElementById("spinner").style.display = "block";
 			console.log('TEST DENTRO initialized app');
 
-			 var url='https://axaitalia--full.lightning.force.com';
+			 var url='https://full-axaitalia.cs88.force.com/poctcrmnfe/';
 			 var appName='c:TESTWebpagePoCNFEapp';
 			 $Lightning.use(appName, 
 						function() {
-							console.log('TEST DENTRO lightning use');
 							document.getElementById("spinner").style.display = "none";
 							createComponent();
 						}, url, token);
