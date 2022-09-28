@@ -92,6 +92,7 @@
 			 var appName='c:TESTWebpagePoCNFEapp';
 			 $Lightning.use(appName, 
 						function() {
+							console.log('TEST DENTRO lightning use');
 							document.getElementById("spinner").style.display = "none";
 							createComponent();
 						}, url, token);
@@ -99,7 +100,9 @@
          }
          
          function createComponent(){
+			console.log('TEST DENTRO createcomponent');
          	$Lightning.createComponent(
+
          		"c:TESTWebpagePoCNFE", 
          		{
          			accessToken: token
