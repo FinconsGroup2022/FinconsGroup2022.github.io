@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
    <body>
       
@@ -82,8 +83,8 @@
 			 
 			 if(token){
 				alert('Autenticazione Completata');//('We got the token! :D *hopefully the right one!*');
-				//ajaxCall();
-				initializeApp();
+				ajaxCall();
+				//initializeApp();
 
 			 }else
 				window.location = OAuthURL;
@@ -107,7 +108,8 @@
 						var x = JSON.stringify(data);
 						//console.log(x);
 						console.log('TEST Chiamata Ajax Success');
-						document.getElementById(TEST).setAttribute(x);
+						const elem = document.getElementById('TEST');
+						elem.setAttribute("style","x");
 						//initializeApp();
 
 					},
