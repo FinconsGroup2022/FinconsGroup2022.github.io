@@ -79,7 +79,9 @@
 			 
 			 if(token){
 				alert('Autenticazione Completata');//('We got the token! :D *hopefully the right one!*');
-				ajaxCall();
+				//ajaxCall();
+				initializeApp();
+
 			 }else
 				window.location = OAuthURL;
          	
@@ -127,7 +129,7 @@
 						function() {
 							document.getElementById("spinner").style.display = "none";
 							createComponent();
-						}, 'https://full-axaitalia.cs88.force.com/poctcrmnfe', token);
+						}, 'https://axaitalia--full.lightning.force.com', token);
          
          }
          
