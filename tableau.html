@@ -18,6 +18,9 @@
 	  
 	  <!-- Dashboard Embed Container -->
       <div id="dashboard"></div>
+
+	  <div id="TEST"></div>
+
 	  
    </body>
    <head>
@@ -101,10 +104,11 @@
 					// Function to call when to
 					// request is ok 
 					success: function (data) {
-						//var x = JSON.stringify(data);
+						var x = JSON.stringify(data);
 						//console.log(x);
 						console.log('TEST Chiamata Ajax Success');
-						initializeApp();
+						document.getElementById(TEST).setAttribute(x);
+						//initializeApp();
 
 					},
 	
