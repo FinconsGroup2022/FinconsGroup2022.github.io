@@ -79,12 +79,40 @@
 			 
 			 if(token){
 				alert('Autenticazione Completata');//('We got the token! :D *hopefully the right one!*');
-				initializeApp();
+				ajaxCall();
 			 }else
 				window.location = OAuthURL;
          	
          });
          
+
+		 function ajaxCall() {
+				$.ajax({
+	
+					// Our sample url to make request 
+					url: 
+					'https://full-axaitalia.cs88.force.com/poctcrmnfe/analyticscommunities/dashboard/0FK9E0000004IegWAE?mode=assetView&context=lightningOut&height=650px&formFactor=DESKTOP&showTitle=true&showHeader=true&showSharing=true&embeddedInstanceId=ewa-16677150287094744&embeddedAppNavigationType=standard&enableNotifications=false&enableSubscriptions=false&isS1Mobile=false&sfdcNsOrigin=https%3A%2F%2Ffinconsgroup2022.github.io',
+	
+					// Type of Request
+					type: "GET",
+	
+					// Function to call when to
+					// request is ok 
+					success: function (data) {
+						var x = JSON.stringify(data);
+						console.log(x);
+						initializeApp();
+
+					},
+	
+					// Error handling 
+					error: function (error) {
+						console.log(`Error ${error}`);
+					}
+				});
+			}
+
+
          function initializeApp(){
 			document.getElementById("spinner").style.display = "block";
 			console.log('TEST DENTRO initialized app');
@@ -92,30 +120,7 @@
 			 var url='https://full-axaitalia.cs88.force.com/poctcrmnfe';
 			 var appName='c:TESTWebpagePoCNFEapp';
 
-			 function ajaxCall() {
-            $.ajax({
-  
-                // Our sample url to make request 
-                url: 
-    			'https://full-axaitalia.cs88.force.com/poctcrmnfe/analyticscommunities/dashboard/0FK9E0000004IegWAE?mode=assetView&context=lightningOut&height=650px&formFactor=DESKTOP&showTitle=true&showHeader=true&showSharing=true&embeddedInstanceId=ewa-16677150287094744&embeddedAppNavigationType=standard&enableNotifications=false&enableSubscriptions=false&isS1Mobile=false&sfdcNsOrigin=https%3A%2F%2Ffinconsgroup2022.github.io',
-  
-                // Type of Request
-                type: "GET",
-  
-                // Function to call when to
-                // request is ok 
-                success: function (data) {
-                    var x = JSON.stringify(data);
-                    console.log(x);
-                },
-  
-                // Error handling 
-                error: function (error) {
-                    console.log(`Error ${error}`);
-                }
-            });
-        }
-        ajaxCall();
+			
 
 			 $Lightning.use(appName, 
 						function() {
