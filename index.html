@@ -60,7 +60,6 @@
         </style>
     </head>
 
-    <script src="https://axaitalia--full.lightning.force.com/lightning/lightning.out.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
        var token;
@@ -85,28 +84,11 @@
         
         if(token){
           alert('Autenticazione Completata');//('We got the token! :D *hopefully the right one!*');
-          //initializeApp();
 
         }else
           window.location = OAuthURL;
           
        });
-       
-       function initializeApp(){
-       document.getElementById("spinner").style.display = "block";
-       console.log('TEST DENTRO initialized app');
-
-        var url='https://full-axaitalia.cs88.force.com/poctcrmnfe';
-        //var url='https://axaitalia--full.lightning.force.com';
-
-        var appName='c:TESTWebpagePoCNFEapp';
-
-        $Lightning.use(appName, 
-                function() {
-                   document.getElementById("spinner").style.display = "none";
-                }, url, token);
-       
-       }
        
     </script> 
 
