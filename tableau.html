@@ -37,7 +37,7 @@
 	  
 	  
 
-       <script src="https://axaitalia--full.lightning.force.com/lightning/lightning.out.js"></script>
+       <!--<script src="https://axaitalia--full.lightning.force.com/lightning/lightning.out.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script>
          var token;
@@ -46,9 +46,12 @@
          
          var OAuthURL='https://full-axaitalia.cs88.force.com/poctcrmnfe/services/oauth2/authorize?client_id='+clientID+'&client_secret='+clientSecret+'&response_type=token&redirect_uri=https://finconsgroup2022.github.io/tableau.html'
          				  
-         $(document).ready(function(){
+         //$(document).ready(function(){
+
+			//initializeApp();
+
          
-			 var decodedUrl= decodeURIComponent(window.location.href);
+			/* var decodedUrl= decodeURIComponent(window.location.href);
 			 var tokenLiteral='access_token=';
 			 
 			 if(decodedUrl.includes(tokenLiteral)){
@@ -66,12 +69,12 @@
 				//initializeApp();
 
 			 }else
-				window.location = OAuthURL;
+				window.location = OAuthURL;*/
          	
          });
          
 
-		 function ajaxCall() {
+		/* function ajaxCall() {
 				$.ajax({
 	
 					// Our sample url to make request 
@@ -98,10 +101,10 @@
 						console.log(`Error ${error}`);
 					}
 				});
-			}
+			}*/
 
 
-         function initializeApp(){
+         /*function initializeApp(){
 			document.getElementById("spinner").style.display = "block";
 			console.log('TEST DENTRO initialized app');
 
@@ -130,8 +133,8 @@
          		}, 
          		"dashboard"
          	); 
-         }
-      </script> 
+         }*/
+      </script> -->
    </head>
 
    <body>
@@ -152,7 +155,7 @@
 	<div id="spinner" style="display:none" class="spinner-border slds-align_absolute-center"></div>
 	
 	<!-- Dashboard Embed Container -->
-	 <div id="dashboard"></div>
+	 <!--<div id="dashboard"></div>-->
 
 	<!-- <div id="TEST"></div> -->
  <iframe src="https://full-axaitalia.cs88.force.com/poctcrmnfe/apex/javascriptIntegration?id=pOC_embed_dashboard_lwc&component=pOC_embed_dashboard_lwc" csp="frame-src 'self' https://salesforce.com;" ></iframe>
