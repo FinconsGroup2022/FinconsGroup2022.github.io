@@ -137,7 +137,7 @@
       </script> -->
    </head>
 
-   <body csp="frame-src 'self' https://salesforce.com;">
+   <body >
       
 	<div class="headerContainer">
 	   <div style="background-color:#040496;margin: 1rem;padding: 0.5rem;width:10%" id="HeaderID">
@@ -158,8 +158,9 @@
 	 <!--<div id="dashboard"></div>-->
 
 	<!-- <div id="TEST"></div> -->
- <iframe src="https://full-axaitalia.cs88.force.com/poctcrmnfe/apex/javascriptIntegration?id=pOC_embed_dashboard_lwc&component=pOC_embed_dashboard_lwc" referrerpolicy="unsafe-url" ></iframe>
-	
+	<header >
+ <iframe src="https://full-axaitalia.cs88.force.com/poctcrmnfe/apex/javascriptIntegration?id=pOC_embed_dashboard_lwc&component=pOC_embed_dashboard_lwc" csp="frame-src 'self' https://salesforce.com;" referrerpolicy="unsafe-url" ></iframe>
+	</header>	
  </body>
 
 </html>
