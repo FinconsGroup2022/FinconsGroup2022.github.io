@@ -58,4 +58,24 @@
 
  </body>
 
+ <script>
+    
+	var dashboard;
+
+	var param = 'id';
+	console.log("Page path is " + window.location.pathname)
+	console.log("Page location is " + window.location.href)
+	console.log("Page location PARENT is " + window.parent.location.href)
+	console.log("Page location TOP is " + window.top.location.href)
+
+	var parametro = new URL(window.top.location.href).searchParams.get(param);
+	console.log('id URL: '+ parametro);
+
+
+	if(dashboard==null){
+		dashboard= "0FK9E0000004ImaWAE";
+		}
+
+</script>
+
 </html>
