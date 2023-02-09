@@ -34,107 +34,6 @@
          }
       </style>
 	  
-	  
-
-       <!--<script src="https://axaitalia--full.lightning.force.com/lightning/lightning.out.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script>
-         var token;
-		 var clientID='3MVG9lcxCTdG2VbuUvlhgu0dJbvAGbJ0Z.PFdL0uCs4FRbLaytorCHCzNC5YElNnpIrRRrLcshPwv5TRQYdkz';
-		 var clientSecret = '96219F072C04F44FFEFE5CFB1D08C4DE0C576C32E005B72E441922979C3C3D53';
-         
-         var OAuthURL='https://full-axaitalia.cs88.force.com/poctcrmnfe/services/oauth2/authorize?client_id='+clientID+'&client_secret='+clientSecret+'&response_type=token&redirect_uri=https://finconsgroup2022.github.io/tableau.html'
-         				  
-         //$(document).ready(function(){
-
-			//initializeApp();
-
-         
-			/* var decodedUrl= decodeURIComponent(window.location.href);
-			 var tokenLiteral='access_token=';
-			 
-			 if(decodedUrl.includes(tokenLiteral)){
-				var start = decodedUrl.indexOf(tokenLiteral) + tokenLiteral.length;
-				var stringEnd = decodedUrl.indexOf('&');
-				token = decodedUrl.substring(start,stringEnd);
-				console.log(token);
-			 }
-			 else
-				alert('Inizio Autenticazione');
-			 
-			 if(token){
-				alert('Autenticazione Completata');//('We got the token! :D *hopefully the right one!*');
-				//ajaxCall();
-				//initializeApp();
-
-			 }else
-				window.location = OAuthURL;*/
-         	
-         });
-         
-
-		/* function ajaxCall() {
-				$.ajax({
-	
-					// Our sample url to make request 
-					url: 
-					'https://full-axaitalia.cs88.force.com/poctcrmnfe/analyticscommunities/dashboard/0FK9E0000004IegWAE?mode=assetView&context=lightningOut&height=650px&formFactor=DESKTOP&showTitle=true&showHeader=true&showSharing=true&embeddedInstanceId=ewa-16677150287094744&embeddedAppNavigationType=standard&enableNotifications=false&enableSubscriptions=false&isS1Mobile=false&sfdcNsOrigin=https%3A%2F%2Ffinconsgroup2022.github.io',
-	
-					// Type of Request
-					type: "GET",
-	
-					// Function to call when to
-					// request is ok 
-					success: function (data) {
-						var x = JSON.stringify(data);
-						//console.log(x);
-						console.log('TEST Chiamata Ajax Success');
-						const elem = document.getElementById('TEST');
-						elem.innerHTML=x;
-						//initializeApp();
-
-					},
-	
-					// Error handling 
-					error: function (error) {
-						console.log(`Error ${error}`);
-					}
-				});
-			}*/
-
-
-         /*function initializeApp(){
-			document.getElementById("spinner").style.display = "block";
-			console.log('TEST DENTRO initialized app');
-
-			 //var url='https://full-axaitalia.cs88.force.com/poctcrmnfe';
-			 var url='https://axaitalia--full.lightning.force.com';
-
-			 var appName='c:TESTWebpagePoCNFEapp';
-
-			
-
-			 $Lightning.use(appName, 
-						function() {
-							document.getElementById("spinner").style.display = "none";
-							createComponent();
-						}, url, token);
-         
-         }
-         
-         function createComponent(){
-			console.log('TEST DENTRO createcomponent');
-         	$Lightning.createComponent(
-
-         		"c:TESTWebpagePoCNFE", 
-         		{
-         			accessToken: token
-         		}, 
-         		"dashboard"
-         	); 
-         }*/
-      </script> -->
-	  
    </head>
 
    <body >
@@ -153,21 +52,16 @@
 	
 	<div id="spinner" style="display:none" class="spinner-border slds-align_absolute-center"></div>
 	
-	<!-- Dashboard Embed Container -->
-	 <!--<div id="dashboard"></div>-->
+	  <!-- Dashboard Embed Container -->
 
-	<!-- <div id="TEST"></div> -->
+ 		<iframe   style="height:800px; width:100%; border:none;" id="frame"	></iframe>
 
- 		<iframe   style="height:650px; width:100%; border:none;"	src="https://full-axaitalia.cs88.force.com/poctcrmnfe/apex/javascriptIntegration?id=pOC_embed_dashboard_lwc&component=pOC_embed_dashboard_lwc"  ></iframe>
-	<!--<script>
-		console.log('TEST');
-		let element = document.querySelector('.slds-button slds-button_icon-border action-bar-action-openInNewWindow reportAction report-action-openInNewWindow action-bar-sprite-button');
-		console.log('element: '+ element);
-
-	</script>-->
-	<!--<div style="height:100vh;" >
-		<iframe src='https://full-axaitalia.cs88.force.com/poctcrmnfe/apex/POC_embedded_dashboard' style="height:100%; width:100%;" frameborder="0" ></iframe>
-	</div> -->
  </body>
+
+ <script>
+    
+	document.getElementById("frame").setAttribute('src', "https://axaitalia--develop1.sandbox.my.site.com/crm/apex/javascriptIntegration?id=iframeInsideDashboard&component=iframeInsideDashboard");
+	
+</script>
 
 </html>
