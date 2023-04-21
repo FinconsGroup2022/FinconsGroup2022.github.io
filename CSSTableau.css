@@ -1,5 +1,4 @@
-/*.slds-button.slds-button_icon-border.action-bar-action-openInNewWindow.reportAction.report-action-openInNewWindow.action-bar-sprite-button {
-
-	display: none;
-
-}*/
+.slds-card .slds-card,.slds-card .slds-card-wrapper,.slds-card-wrapper .slds-card,.slds-card-wrapper .slds-card-wrapper,.slds-modal .slds-card,.slds-modal .slds-card-wrapper,.slds-tabs_default .slds-card,.slds-tabs_default .slds-card-wrapper,.slds-tabs--default .slds-card,.slds-tabs--default .slds-card-wrapper,.slds-tabs_card .slds-card,.slds-tabs_card .slds-card-wrapper,.slds-tabs_card.slds-tabs_card .slds-card,.slds-tabs_card.slds-tabs_card .slds-card-wrapper {
+    border: 1;
+    box-shadow: none
+}
