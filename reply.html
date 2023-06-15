@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html >
+   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <style>
+         .headerContainer{
+			 width: 100%;
+			 top: 0;
+			 left: 0;
+			 z-index: 100;
+			 position: relative;
+			 display: flex;
+			 background: #040496;
+			 color: #fff;
+         }
+         .header{
+			 padding:1rem;
+			 font-family: 'Salesforce Sans',Arial,sans-serif;
+			 line-height: 1.5;
+			 display: flex;
+			 align-content: center;
+			 align-items: stretch;
+			 white-space: nowrap;
+			 position: relative;
+			 font-size: 35px;
+			 transition: background-color .25s cubic-bezier(0.39, 0.575, 0.565, 1);
+         }
+         .slds-align_absolute-center {
+			 display: flex;
+			 justify-content: center;
+			 align-content: center;
+			 align-items: center;
+			 margin: auto;
+         }
+      </style>
+	  
+   </head>
+
+   <body >
+	<link rel="stylesheet" type="text/css" href="https://finconsgroup2022.github.io/CSSTableau.css" />
+
+	<div class="headerContainer">
+	   <div style="background-color:#040496;margin: 1rem;padding: 0.5rem;width:10%" id="HeaderID">
+		  <div style="float:left;width: 24%;">
+			  <img style="padding-right: 1rem;" height="100%" width="65px" src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-original-577x577/s3/032021/axa_logo_open_blue_rgb.png?rvw7noouY8YQY56NEl7.g9AbiGNRcXAM&itok=xihk68zw"/>
+		  </div>
+	   </div>
+	   <div class="slds-align_absolute-center" style="margin-left: 25%;">
+		  <span class="header">Nuovo Front End</span>
+	   </div>
+	</div>
+	
+	<div id="spinner" style="display:none" class="spinner-border slds-align_absolute-center"></div>
+	
+	  <!-- Dashboard Embed Container -->
+
+ 		<iframe   style="height:800px; width:100%; border:none;" id="frame"	></iframe>
+
+ </body>
+
+ <script>
+    
+	document.getElementById("frame").setAttribute('src', "https://axaitalia--develop1.sandbox.my.site.com/crm/apex/javascriptIntegration?id=mobilityPushHomepage&component=mobilityPushHomepage");
+	
+</script>
+
+</html>
